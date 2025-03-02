@@ -1,3 +1,7 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
+
 /*
 <div id="parent">
     <div id="child1">
@@ -24,5 +28,6 @@ const parentdiv = React.createElement("div", { id: "parent" }, [
   ]),
 ]);
 
-const reactRoot = ReactDOM.createRoot(document.querySelector("#reactRoot"));
+const reactRoot = createRoot(document.querySelector("#reactRoot"));
+// ReactDOM.createRoot();
 reactRoot.render([reactHeading, parentdiv]);
