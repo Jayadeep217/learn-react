@@ -3,27 +3,27 @@
     justify-content: space-around;
     align-items: center;
     height: 90px;
-  }
+}
 
 .logo {
     width: 65px;
     border-radius: 50%;
     display: block;
-  }
+}
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 24px;
-  }
+}
 
-.site-name{
+.site-name {
     font-size: xx-large;
     font-weight: 500;
 }
 
-.nav-items{
+.nav-items {
     padding: 0px 20px;
 }
 
@@ -36,4 +36,38 @@
 .nav-items>ul>li {
     padding: 10px;
     margin: 10px;
+}
+
+.search {
+    padding: 10px;
+}
+
+.restaurant-container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.restaurant-card {
+    height: 250px;
+    width: 170px;
+    border-radius: 3%;
+    padding: 10px;
+    background-color: beige;
+}
+
+.restaurant-card-img {
+    width: 170px;
+    border-radius: 4%;
+}
+
+.restaurant-card:hover{
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid chocolate;
+}
+
+.restaurant-card > h3, h4{
+    margin: 2%;
 }
