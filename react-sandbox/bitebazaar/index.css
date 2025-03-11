@@ -47,6 +47,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: 75%;
+    margin-left: 15%;
 }
 
 .restaurant-card {
@@ -57,12 +59,18 @@
 }
 
 .restaurant-card-img {
+    height: 120px;
     width: 170px;
     border-radius: 4%;
 }
 
-.restaurant-card:hover{
+.restaurant-card:hover {
     cursor: pointer;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid chocolate;
+}
+
+.btn-filter {
+    margin-left: 15%;
+    cursor: pointer;
 }
