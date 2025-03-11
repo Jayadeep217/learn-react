@@ -50,7 +50,6 @@
 }
 
 .restaurant-card {
-    height: 250px;
     width: 170px;
     border-radius: 3%;
     padding: 10px;
@@ -66,8 +65,4 @@
     cursor: pointer;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid chocolate;
-}
-
-.restaurant-card > h3, h4{
-    margin: 2%;
 }
