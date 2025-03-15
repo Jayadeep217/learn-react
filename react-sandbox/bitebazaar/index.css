@@ -52,15 +52,15 @@
 }
 
 .restaurant-card {
-    width: 170px;
+    width: 180px;
     border-radius: 3%;
     padding: 10px;
     background-color: beige;
 }
 
 .restaurant-card-img {
-    height: 120px;
-    width: 170px;
+    height: 130px;
+    width: 180px;
     border-radius: 4%;
 }
 

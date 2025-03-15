@@ -4,17 +4,18 @@ import { useEffect, useState } from "react";
 import { SWIGGY_API_HEADERS, SWIGGY_API_URL } from "../utils/constants";
 
 const MainBody = () => {
-  const [restaurantsList, setRestaurantsList] = useState(resList);
+  const [restaurantsList, setRestaurantsList] = useState([]);
 
   useEffect(() => {
     fetchRestaurantData();
   }, []);
 
   const fetchRestaurantData = async () => {
-    const response = await fetch(SWIGGY_API_URL);
+    const response = await fetch(SWIGGY_API_URL, SWIGGY_API_HEADERS);
     const data = await response.json();
-
-    console.log(data.data.cards);
+    const restaurantData =
+      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+    setRestaurantsList(restaurantData);
   };
 
   return (
@@ -24,7 +25,7 @@ const MainBody = () => {
           className="btn-filter"
           onClick={() => {
             const filteredRestaurantsList = restaurantsList.filter(
-              (restaurant) => restaurant.data.avgRating > 4.2
+              (restaurant) => restaurant.info.avgRating > 4.2
             );
             setRestaurantsList(filteredRestaurantsList);
           }}
@@ -34,7 +35,7 @@ const MainBody = () => {
         <button
           className="btn-clear-filter"
           onClick={() => {
-            setRestaurantsList(resList);
+            setRestaurantsList(restaurantsList);
           }}
         >
           Clear
@@ -42,7 +43,7 @@ const MainBody = () => {
       </div>
       <div className="restaurant-container">
         {restaurantsList.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
