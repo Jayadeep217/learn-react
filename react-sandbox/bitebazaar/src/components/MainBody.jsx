@@ -1,9 +1,21 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { SWIGGY_API_HEADERS, SWIGGY_API_URL } from "../utils/constants";
 
 const MainBody = () => {
   const [restaurantsList, setRestaurantsList] = useState(resList);
+
+  useEffect(() => {
+    fetchRestaurantData();
+  }, []);
+
+  const fetchRestaurantData = async () => {
+    const response = await fetch(SWIGGY_API_URL);
+    const data = await response.json();
+
+    console.log(data.data.cards);
+  };
 
   return (
     <div className="main">
@@ -18,6 +30,14 @@ const MainBody = () => {
           }}
         >
           Top rated restaurants
+        </button>
+        <button
+          className="btn-clear-filter"
+          onClick={() => {
+            setRestaurantsList(resList);
+          }}
+        >
+          Clear
         </button>
       </div>
       <div className="restaurant-container">
