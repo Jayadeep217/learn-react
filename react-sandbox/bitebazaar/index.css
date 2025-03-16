@@ -74,3 +74,24 @@
     margin-left: 15%;
     cursor: pointer;
 }
+
+.btn-clear-filter {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.shimmer-container {
+    margin-left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 75%;
+    padding: 10px;
+}
+
+.shimmer-card {
+    height: 250px;
+    width: 180px;
+    border-radius: 3%;
+    background-color: beige;
+}
